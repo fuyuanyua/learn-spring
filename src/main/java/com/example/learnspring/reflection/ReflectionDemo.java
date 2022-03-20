@@ -20,7 +20,10 @@ import java.lang.reflect.Constructor;
  *      3.通过构造方法生成实例对象：
  *          constructor.newInstance()
  *
- *      Spring IOC容器大量使用了反射机制来实例化bean
+ *      说明：Spring框架中大量使用了反射机制来实例化对象：
+ *          1.bean的实例化
+ *          2.SpringFactoriesLoader.loadFactories，加载spring.factories配置文件信息然后反射实例化对象
+ *          3...
  */
 
 @Slf4j
