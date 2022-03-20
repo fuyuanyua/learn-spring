@@ -6,14 +6,14 @@ import lombok.extern.slf4j.Slf4j;
 import java.lang.reflect.Constructor;
 
 /**
- * @Description: ReflectionDemo
+ * @Description: 反射示例
  * @Author: lhb
  * @Date: 2022/3/19 20:45
  *
  * 反射：
  *      1.获取Class对象三种方法：
  *          1.Class.forName("全限定类名")
- *          2.类.class
+ *          2.类名.class
  *          3.对象.getClass()
  *      2.获取Class对象的构造方法：
  *          clazz.getDeclaredConstructor()
