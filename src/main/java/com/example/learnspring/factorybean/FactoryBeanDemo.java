@@ -3,6 +3,7 @@ package com.example.learnspring.factorybean;
 import com.example.learnspring.entity.Car;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -31,6 +32,10 @@ public class FactoryBeanDemo implements FactoryBean {
         // 想要获取bean本身也可以，bean名字前面需要加上&
         Object bean2 = ctx.getBean("&factoryBeanDemo");
         log.info("bean is {}, class is {}", bean2, bean2.getClass());
+        String[] beanNamesForType = ctx.getBeanNamesForType(FactoryBeanDemo.class);
+        for (String s : beanNamesForType) {
+            log.info("{}", s);
+        }
     }
 
     @Override
