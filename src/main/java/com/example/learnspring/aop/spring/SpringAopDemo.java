@@ -1,6 +1,7 @@
 package com.example.learnspring.aop.spring;
 
 import com.example.learnspring.aop.Chinese;
+import com.example.learnspring.aop.Man;
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
@@ -20,6 +21,11 @@ import org.springframework.aop.support.DefaultPointcutAdvisor;
  *          2.advisor = advice + pointcut
  *
  *          可以看出，aspect包含多组通知+切点，而advisor只包含一组通知+切点，粒度更细
+ *
+ *      Spring选择jdk还是cglib完成动态代理？
+ *          1.proxyTargetClass == false && 被代理的类实现了接口 -> jdk
+ *          2.proxyTargetClass == false && 被代理的类未实现接口 -> cglib
+ *          3.proxyTargetClass == true -> cglib
  */
 
 @Slf4j
@@ -51,16 +57,18 @@ public class SpringAopDemo {
         // 代理工厂，用于创建代理对象
         ProxyFactory proxyFactory = new ProxyFactory();
         proxyFactory.setTarget(chinese);
+        // 告诉代理工厂被代理的类实现了哪些接口
+        proxyFactory.setInterfaces(chinese.getClass().getInterfaces());
         proxyFactory.addAdvisor(advisor);
-        Chinese proxy = (Chinese) proxyFactory.getProxy();
+        Man proxy = (Man) proxyFactory.getProxy();
         // eat方法被增强
         proxy.eat();
         // sleep方法未被增强
         proxy.sleep(1);
 
         // 测试是由jdk还是cglib实现动态代理
-        // 结果为：com.example.learnspring.aop.Chinese$$EnhancerBySpringCGLIB$$b6555e43，表示是cglib实现的动态代理
-        Class<? extends Chinese> clazz = proxy.getClass();
+        // 结果为：com.sun.proxy.$Proxy0，表示是jdk实现的动态代理
+        Class<? extends Man> clazz = proxy.getClass();
         log.info("代理类：{}", clazz);
 
     }
