@@ -3,7 +3,6 @@ package com.example.learnspring.factorybean;
 import com.example.learnspring.entity.Car;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.FactoryBean;
-import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -12,11 +11,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @Date: 2022/3/20 21:47
  *
  * FactoryBean：
- *      是一个接口，如果一个bean实现了这个接口，那么它就成为一个特殊的bean，它被用作一个对象的工厂来暴露，而不是直接作为一个将自己暴露的bean实例。
+ *      是一个接口，如果一个bean实现了这个接口，那么它就成为了一个工厂bean，从容器中获取此bean将返回它生产出来的bean
  *      也就是说，从容器中获取此bean，返回的将不是它的实例本身，而是它实现的getObject方法中返回的对象（这个对象可以用任意方式来实例化）
  *
  *      Q：FactoryBean和BeanFactory什么区别？
- *      A：无意义问题
+ *      A：无意义问题，有一点要补充，MyBatis的mapper组件，就是通过实现FactoryBean创建的
  */
 
 @Slf4j

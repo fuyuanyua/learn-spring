@@ -4,6 +4,8 @@ import com.example.learnspring.entity.Car;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 
 /**
  * @Description: 反射示例
@@ -38,6 +40,17 @@ public class ReflectionDemo {
         Car instance = (Car) constructor.newInstance();
         instance.setBrand("bmw");
         log.info("{}", instance);
+        // 通过反射获取getBrand方法
+        Method method = clazz.getMethod("getBrand", null);
+        // 获取方法入参
+        Parameter[] parameters = method.getParameters();
+        log.info("方法【{}】的入参【{}】", method, parameters);
+        // 获取方法返回类型
+        Class<?> returnType = method.getReturnType();
+        log.info("方法【{}】的返回类型【{}】", method, returnType);
+        // 通过反射调用getBrand方法
+        Object invoke = method.invoke(instance, null);
+        log.info("方法【{}】的执行结果【{}】", method, invoke);
 
         // 第二种获取Class对象的方法
         Class<Car> clazz1 = Car.class;
