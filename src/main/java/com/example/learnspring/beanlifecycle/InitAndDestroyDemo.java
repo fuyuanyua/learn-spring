@@ -15,8 +15,8 @@ import javax.annotation.PreDestroy;
  * @Date: 2022/3/20 20:38
  *
  * bean生命周期：
- *      init：在bean初始化的时候调用
- *      destroy：在bean销毁的时候调用
+ *      init：在bean初始化的时候调用【afterPropertiesSet】方法
+ *      destroy：在bean销毁的时候调用【destroy】方法
  *
  *      有三种方式：
  *          1.通过JSR250规范定义的注解：@PostConstruct，@PreDestroy

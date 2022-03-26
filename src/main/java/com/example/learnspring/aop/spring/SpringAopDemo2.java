@@ -39,6 +39,11 @@ import java.lang.reflect.Method;
  *          1.proxyTargetClass == false && 被代理的类实现了接口 -> jdk
  *          2.proxyTargetClass == false && 被代理的类未实现接口 -> cglib
  *          3.proxyTargetClass == true -> cglib
+ *
+ *      proxyTargetClass这个值在哪设置？怎么设置的？
+ *          在SpringBoot中，Aop自动配置类：AopAutoConfiguration，根据配置文件的条件设置proxyTargetClass是true还是false
+ *          配置文件：【spring.aop.proxy-target-class】=【true】or【false】，默认为【true】，表示代理对象都默认由【cglib】来创建
+ *
  */
 
 @Slf4j
