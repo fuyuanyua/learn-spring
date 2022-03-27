@@ -20,7 +20,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  *          3.按工厂名去容器取，拿到的是产品bean，想要获取工厂bean本身，工厂名前需要加上【&】
  *
  *      FactoryBean和BeanFactory什么区别？
- *          无意义问题，有一点要补充，MyBatis的mapper组件，就是通过实现FactoryBean创建的
+ *          无意义问题，有一点要补充，MyBatis的mapper组件，就是通过实现FactoryBean创建的，也就是【MapperFactoryBean】
  */
 
 @Slf4j
