@@ -1,5 +1,8 @@
-package com.example.learnspring.postprocessor.bean;
+package com.example.learnspring.postprocessor.config;
 
+import com.example.learnspring.postprocessor.bean.Bean1;
+import com.example.learnspring.postprocessor.bean.Bean2;
+import com.example.learnspring.postprocessor.bean.Bean3;
 import com.example.learnspring.postprocessor.mapper.Mapper1;
 import org.mybatis.spring.mapper.MapperFactoryBean;
 import org.springframework.context.annotation.Bean;

@@ -1,6 +1,6 @@
-package com.example.learnspring.config;
+package com.example.learnspring.initanddestroy.config;
 
-import com.example.learnspring.beanlifecycle.InitAndDestroyDemo;
+import com.example.learnspring.initanddestroy.InitAndDestroyDemo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,6 +1,6 @@
-package com.example.learnspring.beanlifecycle;
+package com.example.learnspring.initanddestroy;
 
-import com.example.learnspring.config.BeanConfiguration;
+import com.example.learnspring.initanddestroy.config.BeanConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
