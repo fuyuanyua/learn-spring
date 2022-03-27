@@ -1,4 +1,4 @@
-package com.example.learnspring.postprocessor.bean;
+package com.example.learnspring.beanlifecycle.postprocessor.bean;
 
 /**
  * @Description: Bean2

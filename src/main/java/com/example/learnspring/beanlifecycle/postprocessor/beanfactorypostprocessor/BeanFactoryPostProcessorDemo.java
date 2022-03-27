@@ -1,6 +1,6 @@
-package com.example.learnspring.postprocessor.beanfactorypostprocessor;
+package com.example.learnspring.beanlifecycle.postprocessor.beanfactorypostprocessor;
 
-import com.example.learnspring.postprocessor.config.Config;
+import com.example.learnspring.beanlifecycle.postprocessor.config.Config;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.ConfigurationClassPostProcessor;
 import org.springframework.context.support.GenericApplicationContext;

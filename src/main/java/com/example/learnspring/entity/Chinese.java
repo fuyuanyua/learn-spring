@@ -1,5 +1,6 @@
-package com.example.learnspring.aop;
+package com.example.learnspring.entity;
 
+import com.example.learnspring.entity.Man;
 import lombok.extern.slf4j.Slf4j;
 
 /**

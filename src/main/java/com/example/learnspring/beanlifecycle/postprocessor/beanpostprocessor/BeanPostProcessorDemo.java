@@ -1,8 +1,8 @@
-package com.example.learnspring.postprocessor.beanpostprocessor;
+package com.example.learnspring.beanlifecycle.postprocessor.beanpostprocessor;
 
-import com.example.learnspring.postprocessor.bean.Bean1;
-import com.example.learnspring.postprocessor.bean.Bean2;
-import com.example.learnspring.postprocessor.bean.Bean3;
+import com.example.learnspring.beanlifecycle.postprocessor.bean.Bean1;
+import com.example.learnspring.beanlifecycle.postprocessor.bean.Bean2;
+import com.example.learnspring.beanlifecycle.postprocessor.bean.Bean3;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;

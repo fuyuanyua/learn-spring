@@ -1,4 +1,4 @@
-package com.example.learnspring.postprocessor.bean;
+package com.example.learnspring.beanlifecycle.postprocessor.bean;
 
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;

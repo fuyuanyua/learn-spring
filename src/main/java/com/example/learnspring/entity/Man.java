@@ -1,4 +1,4 @@
-package com.example.learnspring.aop;
+package com.example.learnspring.entity;
 
 /**
  * @Description: Man

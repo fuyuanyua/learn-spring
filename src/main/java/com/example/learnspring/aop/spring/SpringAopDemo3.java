@@ -1,6 +1,6 @@
 package com.example.learnspring.aop.spring;
 
-import com.example.learnspring.aop.Chinese;
+import com.example.learnspring.entity.Chinese;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;

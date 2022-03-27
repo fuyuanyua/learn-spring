@@ -1,6 +1,6 @@
 package com.example.learnspring.aop.cglib;
 
-import com.example.learnspring.aop.Chinese;
+import com.example.learnspring.entity.Chinese;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;

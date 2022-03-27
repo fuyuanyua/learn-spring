@@ -1,7 +1,7 @@
 package com.example.learnspring.aop.spring;
 
-import com.example.learnspring.aop.Chinese;
-import com.example.learnspring.aop.Man;
+import com.example.learnspring.entity.Chinese;
+import com.example.learnspring.entity.Man;
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;

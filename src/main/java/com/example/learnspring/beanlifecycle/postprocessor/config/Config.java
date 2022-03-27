@@ -1,10 +1,8 @@
-package com.example.learnspring.postprocessor.config;
+package com.example.learnspring.beanlifecycle.postprocessor.config;
 
-import com.example.learnspring.postprocessor.bean.Bean1;
-import com.example.learnspring.postprocessor.bean.Bean2;
-import com.example.learnspring.postprocessor.bean.Bean3;
-import com.example.learnspring.postprocessor.mapper.Mapper1;
-import org.mybatis.spring.mapper.MapperFactoryBean;
+import com.example.learnspring.beanlifecycle.postprocessor.bean.Bean1;
+import com.example.learnspring.beanlifecycle.postprocessor.bean.Bean2;
+import com.example.learnspring.beanlifecycle.postprocessor.bean.Bean3;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.example.learnspring.aop;
+package com.example.learnspring.mapper;
 
 import com.example.learnspring.entity.Car;
 import org.apache.ibatis.annotations.Mapper;
