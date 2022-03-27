@@ -12,6 +12,17 @@ import org.springframework.context.support.GenericApplicationContext;
  * @Description: 常见的BeanPostProcessor示例
  * @Author: lhb
  * @Date: 2022/3/27 13:56
+ *
+ *      bean生命周期：
+ *          实例化 -> populateBean -> 调用Aware接口方法 -> before -> init -> after -> destroy
+ *
+ *      说明：
+ *          一般来说，BeanPostProcessor在before和after调用
+ *          也就是分别调用BeanPostProcessor的【postProcessBeforeInitialization】和【postProcessAfterInitialization】
+ *          但是【InstantiationAwareBeanPostProcessor】类型的BeanPostProcessor，在【populateBean】中也会进行调用，
+ *          【AutowiredAnnotationBeanPostProcessor】和【CommonAnnotationBeanPostProcessor】都实现了【InstantiationAwareBeanPostProcessor】，
+ *          所以他们都会在【populateBean】中调用，也就是处理【@Autowired】、【@Resource】等，完成依赖注入
+ *
  */
 
 @Slf4j
