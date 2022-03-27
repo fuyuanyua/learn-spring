@@ -14,6 +14,12 @@ import org.springframework.context.support.GenericApplicationContext;
  * @Date: 2022/3/25 12:44
  *
  *      @Aspect 是Spring框架提供给开发者的API，开发者通过@Aspect注解完成AOP的实现，以下提供示例
+ *
+ *      Spring AOP的一些特点：
+ *          1.代理对象的属性和原始对象的属性不共用，所以直接调用【代理对象.属性】可能获取不到值，
+ *            但是调用【代理对象.get属性】可以取到值，且是原始对象的值，因为代理对象里封装了原始对象，
+ *            这样实际上是调用【原始对象.get属性】
+ *          2.基于动态代理，【static】、【final】、【private】方法均无法被增强
  */
 
 @Slf4j
