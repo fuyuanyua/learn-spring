@@ -39,6 +39,9 @@ import java.lang.reflect.Method;
  *          AnnotationAwareAspectJAutoProxyCreator（BeanPostProcessor） -> wrapIfNecessary方法
  *          传入一个bean，若需要被代理，返回代理对象bean，否则返回原始bean
  *          创建代理对象的流程走的就是上面这一套流程
+ *          创建代理对象的时机：
+ *              1.最普遍的情况：bean对象init之后，也就是调用BeanPostProcessor -> postProcessAfterInitialization方法
+ *              2.遇到循环依赖会提前创建的情况：getEarlyBeanReference方法
  *
  *      Spring选择jdk还是cglib完成动态代理？
  *          1.proxyTargetClass == false && 被代理的类实现了接口 -> jdk
