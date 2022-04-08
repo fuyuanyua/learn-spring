@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-@ComponentScan(value = "com.example.learnspring.postprocessor.bean")
+@ComponentScan(value = "com.example.learnspring.beanlifecycle.postprocessor.bean")
 public class Config {
 
     @Bean

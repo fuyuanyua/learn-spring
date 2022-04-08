@@ -35,6 +35,11 @@ import java.lang.reflect.Method;
  *          3.将pointcut和advice封装成一个advisor（切面）
  *          4.准备一个proxyFactory（代理工厂），传入【被代理对象】和【切面】，返回一个【代理对象】
  *
+ *      源码位置：
+ *          AnnotationAwareAspectJAutoProxyCreator（BeanPostProcessor） -> wrapIfNecessary方法
+ *          传入一个bean，若需要被代理，返回代理对象bean，否则返回原始bean
+ *          创建代理对象的流程走的就是上面这一套流程
+ *
  *      Spring选择jdk还是cglib完成动态代理？
  *          1.proxyTargetClass == false && 被代理的类实现了接口 -> jdk
  *          2.proxyTargetClass == false && 被代理的类未实现接口 -> cglib
