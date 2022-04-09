@@ -39,9 +39,16 @@ import java.lang.reflect.Method;
  *          AnnotationAwareAspectJAutoProxyCreator（BeanPostProcessor） -> wrapIfNecessary方法
  *          传入一个bean，若需要被代理，返回代理对象bean，否则返回原始bean
  *          创建代理对象的流程走的就是上面这一套流程
- *          创建代理对象的时机：
- *              1.最普遍的情况：bean对象init之后，也就是调用BeanPostProcessor -> postProcessAfterInitialization方法
- *              2.遇到循环依赖会提前创建的情况：getEarlyBeanReference方法
+ *
+ *      创建代理对象的时机：
+ *          1.最普遍的情况：bean对象init之后，也就是调用BeanPostProcessor -> postProcessAfterInitialization -> wrapIfNecessary方法
+ *          2.遇到循环依赖会提前创建的情况：三级缓存的工厂对象会调用工厂方法 -> getEarlyBeanReference -> wrapIfNecessary
+ *
+ *      有多个时机可能会创建代理对象，如何避免重复创建代理对象？
+ *          1.遇到循环依赖，会往earlyProxyReferences里put原始对象（仅仅表示已经提前创建代理对象了），然后提前创建代理对象 -> wrapIfNecessary 并返回
+ *          2.那么在init之后的after方法里，先从earlyProxyReferences中get
+ *              若get到，且与传入的原始对象比较是同一个对象，说明已经提前创建代理对象了，那么直接返回传入的原始对象（发回原始对象后，下一步会从二级缓存查找代理对象）
+ *              若get不到，说明没有提前创建代理对象，后续走创建代理对象流程 -> wrapIfNecessary
  *
  *      Spring选择jdk还是cglib完成动态代理？
  *          1.proxyTargetClass == false && 被代理的类实现了接口 -> jdk
