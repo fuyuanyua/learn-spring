@@ -1,2 +1,8 @@
 server:
   port: 10000
+
+
+spring:
+  mvc:
+    servlet:
+      load-on-startup: 1
