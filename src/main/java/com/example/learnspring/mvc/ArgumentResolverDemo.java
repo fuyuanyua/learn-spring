@@ -1,7 +1,6 @@
 package com.example.learnspring.mvc;
 
 import com.example.learnspring.entity.Car;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -57,14 +56,14 @@ public class ArgumentResolverDemo {
                 HttpServletRequest request,
 
                 // ServletModelAttributeMethodProcessor，指定必须带有@ModelAttribute注解，并把解析结果存入ModelAndViewContainer
-                // // ...test/test1/brand=xxx&color=xxx
+                // ...test/test1/brand=xxx&color=xxx
                 @ModelAttribute Car car1,
 
-                // // ServletModelAttributeMethodProcessor，指定无需带有@ModelAttribute注解，并把解析结果存入ModelAndViewContainer
+                // ServletModelAttributeMethodProcessor，指定无需带有@ModelAttribute注解，并把解析结果存入ModelAndViewContainer
                 // ...test/test1/brand=xxx&color=xxx
                 Car car2,
 
-                // RequestResponseBodyMethodProcessor
+                // RequestResponseBodyMethodProcessor：除了解析 @RequestBody 的请求参数，同样也解析 @ResponseBody 返回值
                 // 请求体中获取
                 @RequestBody Car car3
         ) {

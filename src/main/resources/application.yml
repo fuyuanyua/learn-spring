@@ -6,3 +6,13 @@ spring:
   mvc:
     servlet:
       load-on-startup: 1
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: test
+    url: jdbc:mysql://127.0.0.1:3306/learn_mybatis?zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useTimezone=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1qaz2wsx
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
